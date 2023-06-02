@@ -5,11 +5,18 @@ const vscode = require('vscode');
 function transform(s) {
 	let config = vscode.workspace.getConfiguration('csv2table')
 	let delimiter = config.get("delimiter",";")
+	let header = config.get("header", false)
 	let lines = s.split("\n")
-	let result = lines.reduce((accu,current)=> {
+	let result = ""
+	if (header) {
+		let firstline="";
+		[firstline,...lines] = lines
+		result = "<tr>\n<th>" + firstline.replaceAll(delimiter,"</th>\n<th>") + "</th>\n</tr>\n" 
+	}
+	result = lines.reduce((accu,current)=> {
 		accu += "<tr>\n<td>" + current.replaceAll(delimiter,"</td>\n<td>") + "</td>\n</tr>\n"
 		return accu
-	},"")
+	},result)
 
 	return "<table>\n"+result+"</table>"
 }

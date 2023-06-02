@@ -27,6 +27,11 @@
             "type" : "string",
             "default": ";",
             "description" : "Delimiter between cells"
+          },
+          "csv2table.header" : {
+            "type" : "boolean",
+            "default": false,
+            "description" : "Is the first line a header line"
           }
         }
       }
