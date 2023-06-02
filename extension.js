@@ -24,8 +24,8 @@ function activate(context) {
 		let end = selection.end
 		let text = document.getText(new vscode.Range(start,end))
 		let result = transform(text)
-		textEditor.edit((ed)=> {
-			ed.replace(selection,result)
+		textEditor.edit(async (ed)=> {
+			await ed.replace(selection,result)
 			vscode.commands.executeCommand("editor.action.formatDocument")
 		})
 	});
