@@ -5,7 +5,6 @@ const vscode = require('vscode');
 function transform(s) {
 	let config = vscode.workspace.getConfiguration('csv2table')
 	let delimiter = config.get("delimiter",";")
-	console.log(delimiter)
 	let lines = s.split("\n")
 	let result = lines.reduce((accu,current)=> {
 		accu += "<tr>\n<td>" + current.replaceAll(delimiter,"</td>\n<td>") + "</td>\n</tr>\n"
