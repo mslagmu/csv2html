@@ -2,7 +2,7 @@
   "name": "csv2table",
   "displayName": "csv2table",
   "description": "translate a csv into Html Table",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icon" : "icon.png",
   "publisher": "MichelSLAGMULDER",
   "engines": {
