@@ -16,7 +16,8 @@
     "commands": [
       {
         "command": "csv2table.toHTML",
-        "title": "Transform to HTML"
+        "title": "Transform to HTML Table",
+        "category": "csv2table"
       }
     ],
     "configuration":[
@@ -31,10 +32,18 @@
           "csv2table.header" : {
             "type" : "boolean",
             "default": false,
-            "description" : "Is the first line a header line"
+            "description" : "The first line is a header line"
           }
         }
       }
+    ],
+    "keybindings": [
+			{
+				"key": "ctrl+h ctrl+t",
+				"command": "csv2table.toHTML",
+				"mac": "cmd+h cmd+t",
+				"when": "editorTextFocus && editorLangId == html"
+			}
     ]
   },
   "scripts": {
