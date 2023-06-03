@@ -28,7 +28,24 @@ function transform(document,selection) {
 }
 
 
+function toggleBar(bar) {
+	let config = vscode.workspace.getConfiguration('csv2table')
+	let statusbar = config.get("statusbar")
+
+	if (statusbar) {
+		bar.show()
+	} else {
+		bar.hide()
+	}
+
+} 
+
 function activate(context) {
+	
+	let bar = vscode.window.createStatusBarItem()
+	bar.text="📅 csv2table"
+	bar.command = 'csv2table.toHTML'
+	toggleBar(bar)
 
 
 	let disposable = vscode.commands.registerCommand('csv2table.toHTML', function () {
@@ -43,7 +60,13 @@ function activate(context) {
 		})
 	});
 
-	context.subscriptions.push(disposable);
+	let events = vscode.workspace.onDidChangeConfiguration((event) => {
+		if (event.affectsConfiguration('csv2table.statusbar')) {
+			toggleBar(bar)
+		}
+	})
+
+	context.subscriptions.push(disposable,events);
 }
 
 

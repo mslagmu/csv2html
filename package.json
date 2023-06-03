@@ -17,7 +17,7 @@
 		"editor",
 		"csv"
 	],
-  "activationEvents": [],
+  "activationEvents": ["*"],
   "main": "./extension.js",
   "repository": {
     "type": "git",
@@ -44,6 +44,11 @@
             "type" : "boolean",
             "default": false,
             "description" : "The first line is a header line"
+          },
+          "csv2table.statusbar" : {
+            "type" : "boolean",
+            "default": true,
+            "description" : "The staus bar is visible"
           }
         }
       }
