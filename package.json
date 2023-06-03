@@ -4,7 +4,7 @@
   "description": "translate a csv into Html Table",
   "version": "0.1.0",
   "icon" : "icon.png",
-  "publisher": "mslagmu",
+  "publisher": "Michel SLAGMULDER",
   "engines": {
     "vscode": "^1.78.0"
   },
