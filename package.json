@@ -45,6 +45,11 @@
             "default": false,
             "description" : "The first line is a header line"
           },
+          "csv2table.footer" : {
+            "type" : "boolean",
+            "default": false,
+            "description" : "The last line is a footer line"
+          },
           "csv2table.statusbar" : {
             "type" : "boolean",
             "default": true,
