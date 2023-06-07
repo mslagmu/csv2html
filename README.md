@@ -10,6 +10,8 @@ the default configuration is
 
 ```json
     "csv2table.header": true,
+    "csv2table.footer": false,
+    "csv2table.statusbar" : true,
     "csv2table.delimiter": ";",
 ```
 

@@ -53,7 +53,7 @@
           "csv2table.statusbar" : {
             "type" : "boolean",
             "default": true,
-            "description" : "The staus bar is visible"
+            "description" : "The staus bar button is visible"
           }
         }
       }
