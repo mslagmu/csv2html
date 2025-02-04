@@ -17,7 +17,7 @@
 		"editor",
 		"csv"
 	],
-  "activationEvents": ["*"],
+  "activationEvents": ["onLanguage:html"],
   "main": "./extension.js",
   "repository": {
     "type": "git",
@@ -28,7 +28,8 @@
       {
         "command": "csv2table.toHTML",
         "title": "Transform to HTML Table",
-        "category": "csv2table"
+        "category": "csv2table",
+        "when" : con
       }
     ],
     "configuration":[
